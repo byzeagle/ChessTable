@@ -9,7 +9,7 @@ Example:
     
 or
 
-    ./chess.exe -p ./inputfile.txt
+    ./chess.exe -p ./board3.txt
      Siyah : 56, Beyaz : 112.5
 
 ## Valgrind output 
