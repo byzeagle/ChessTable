@@ -4,16 +4,13 @@ This project comes with a makefile. Just run `make` and it will produce a `chess
 
 Example:
 
-`./chess.exe -h`
-`Please enter relative or absolute file path to input file`
-
-`example: ./prog.exe -h or ./prog.exe -p ./input.txt`
-
+    ./chess.exe -h
+    Please enter relative or absolute file path to input file
+    
 or
 
-`./chess.exe -p ./inputfile.txt`
-
-`Siyah : 56, Beyaz : 112.5`
+    ./chess.exe -p ./inputfile.txt
+     Siyah : 56, Beyaz : 112.5
 
 ## Valgrind output 
 
