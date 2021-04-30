@@ -20,6 +20,7 @@ enum COLOR{
 	BLACK
 };
 
+// Point mappings to specific stones
 const static map<char, float> stones {
 	{'p', 1},
 	{'a', 3},
