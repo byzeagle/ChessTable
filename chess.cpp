@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <memory>
 #include <sstream>
+#include <utility>
 
 //	Author Ugur Buyukdurak
 // 	Finished at 29.04.2021 22:18
@@ -30,22 +31,15 @@ const static map<char, float> stones {
 	{'s', 100}
 };
 
-// Helper struct for horse moves
-struct Position{
-	int x;
-	int y;
-};
-
-// Possible moves of a horse in a chess board
-vector<Position> horseMoves = {
-	{1,2},
-	{3,1},
-	{2,-1},
-	{1,-2},
-	{-1,-2},
-	{-2,-1},
-	{-2,1},
-	{-1, 2}
+vector<pair<int,int>> horseMoves {
+	{2,1}, // 1
+	{1,2}, // 2
+	{-1,2},// 3
+	{-2,1},// 4
+	{-2,-1},// 5
+	{-1,-2},// 6
+	{1,-2},// 7
+	{2,-1}// 8
 };
 
 // A class showing a stone's status in a chessboard. 
@@ -135,8 +129,8 @@ static inline void calculatePointHorse(int i, int j, bool black){
 	// if the horse is black
 	if(black){
 		for(const auto & position : horseMoves){ // Loop over pre-defined moves for a horse
-			int newJ = j + position.x;
-			int newI = i + position.y;
+			int newJ = j + position.first;
+			int newI = i + position.second;
 			if(newJ < 1 || newJ > 8) continue;
 			if(newI < 1 || newI > 8) continue;
 			if(chessTable[newI][newJ] == nullptr) continue;
@@ -148,8 +142,8 @@ static inline void calculatePointHorse(int i, int j, bool black){
 		}
 	}else{ // if the horse is white
 		for(const auto & position : horseMoves){ // Loop over pre-defined moves for a horse
-			int newJ = j + position.x;
-			int newI = i + position.y;
+			int newJ = j + position.first;
+			int newI = i + position.second;
 			if(newJ < 1 || newJ > 8) continue;
 			if(newI < 1 || newI > 8) continue;
 			if(chessTable[newI][newJ] == nullptr) continue;
